@@ -98,7 +98,6 @@
               </div>
             </div>
           </div>
-
           <div class="colored-box2">
             <div class="d-flex flex-column pa-4">
               <v-slider
@@ -149,6 +148,11 @@
 </template>
 
 <script>
+/**
+ * This component represents a Vue setup for managing a vertical progress bar and related functionalities.
+ * It includes reactive data, computed properties, and methods for handling user input, calculating durations,
+ * updating data, and managing the lifecycle of the component.
+ */
 import VerticalProgressBar from "./VerticalProgressBar.vue";
 import textEn from "../assets/json/textEn.json";
 import textFr from "../assets/json/textFr.json";
@@ -161,10 +165,16 @@ export default {
     VerticalProgressBar,
   },
   props: {
+    /**
+     * The language of the text data.
+     */
     language: {
       type: String,
       required: true,
     },
+    /**
+     * The unique identifier of the user.
+     */
     uid: {
       type: Number,
     },
@@ -173,10 +183,11 @@ export default {
     },
   },
   setup(props) {
+    // Computed property to dynamically select text data based on the language
     const textData = computed(() => {
       return props.language === "en" ? textEn : textFr;
     });
-
+    // Watcher to update text data when language changes
     watch(
       () => props.language,
       () => {
@@ -192,10 +203,8 @@ export default {
         data.value.language = props.language;
       }
     );
-
     let activeSlider = null;
     const graph = ref({}); // Initialize the graph dictionary
-
     const title = ref(textData.value.title);
     const description1 = ref(textData.value.description1);
     const description2 = ref(textData.value.description2);
@@ -206,7 +215,6 @@ export default {
     const bottomSliderLabel = ref(textData.value.topSliderLabel);
     const result = ref(textData.value.result);
     const instruction = ref(textData.value.instruction);
-
     const startTimeApp = ref(new Date());
     const startTime = ref(new Date());
     const sliders = ref([]);
@@ -222,37 +230,53 @@ export default {
     const dialog = ref(false);
     const text5 = ref("Option 1");
     const text6 = ref("Option 2");
-
     let startSlider1 = 50;
     let startSlider2 = 50;
-
+    /**
+     * Handles input for text input field 1.
+     * If the input value is different from the current value, updates the value and pushes it to option1 array in data.
+     * @param {string} value - The new input value.
+     */
     const handleInput1 = (value) => {
       if (value !== text5.value) {
         text5.value = value;
         data.value.option1.push(text5.value);
       }
     };
-
+    /**
+     * Handles input for text input field 2.
+     * If the input value is different from the current value, updates the value and pushes it to option2 array in data.
+     * @param {string} value - The new input value.
+     */
     const handleInput2 = (value) => {
       if (value !== text6.value) {
         text6.value = value;
         data.value.option2.push(text6.value);
       }
     };
-
+    /**
+     * Sets the activeSlider to Slider_1 and updates the startSlider1 and startTime values.
+     * @param {number} value - The initial value of slider1.
+     */
     const startValue1 = (value) => {
       activeSlider = "Slider_1";
       startSlider1 = slider1.value;
       startTime.value = new Date();
     };
-
+    /**
+     * Sets the activeSlider to Slider_2 and updates the startSlider2 and startTime values.
+     * @param {number} value - The initial value of slider2.
+     */
     const startValue2 = (value) => {
       activeSlider = "Slider_2";
       startSlider2 = slider2.value;
       startTime.value = new Date();
     };
-
     // Create dictionaries to store the arrays
+    /**
+     * Initializes the data object with the provided props and other default values.
+     * @returns {object} The initialized data object.
+     */
     const data = ref({
       userID: props.uid,
       returnUrl: props.returnUrl,
@@ -268,38 +292,43 @@ export default {
       language: props.language,
       graph:graph.value
     });
-
+    /**
+     * Generates an array of numbers within a specified range.
+     * @param {number} start - The start of the range.
+     * @param {number} stop - The end of the range.
+     * @param {number} step - The step size between numbers in the range.
+     * @returns {number[]} The array of numbers within the specified range.
+     */
     function range(start, stop, step) {
       if (typeof stop == "undefined") {
         // one param defined
         stop = start;
         start = 0;
       }
-
       if (typeof step == "undefined") {
         step = 1;
       }
-
       if ((step > 0 && start >= stop) || (step < 0 && start <= stop)) {
         return [];
       }
-
       var result = [];
       for (var i = start; step > 0 ? i < stop : i > stop; i += step) {
         result.push(i);
       }
-
       return result;
     }
-
     watch(slider1, (newValue) => {
       slider2.value = 100 - newValue;
     });
-
     watch(slider2, (newValue) => {
       slider1.value = 100 - newValue;
     });
-
+    /**
+     * Calculates the duration between two timestamps.
+     * @param {Date} startTime - The start timestamp.
+     * @param {Date} endTime - The end timestamp.
+     * @returns {string} The duration formatted as "Xm Ys" or "Z ms".
+     */
     const calculateDuration = (startTime, endTime) => {
       const durationInMillis = endTime - startTime;
       const minutes = Math.floor(durationInMillis / (1000 * 60));
@@ -310,7 +339,7 @@ export default {
         return `${durationInMillis} ms`;
       }
     };
-
+    // Methods to update data and text labels
     const updateData1 = () => {
       activeSlider = null;
       if (startSlider1 < slider1.value) {
@@ -340,7 +369,6 @@ export default {
       // data.value.topSlider.push(slider1.value);
       // data.value.bottomSlider.push(slider2.value);
     };
-
     const updateData2 = () => {
       activeSlider = null;
       if (startSlider2 < slider2.value) {
@@ -368,21 +396,36 @@ export default {
         });
       }
     };
-
+    /**
+     * Updates the left scale label data with the current value of text1.
+     */
     const updateText1 = () => {
       data.value.leftScaleLabel.push(text1.value);
     };
+    /**
+     * Updates the right scale label data with the current value of text2.
+     */
     const updateText2 = () => {
       data.value.rightScaleLabel.push(text2.value);
     };
+    /**
+     * Updates the top slider label data with the current value of text3.
+     */
     const updateText3 = () => {
       data.value.topSliderLabel.push(text3.value);
     };
+    /**
+     * Updates the bottom slider label data with the current value of text4.
+     */
     const updateText4 = () => {
       data.value.bottomSliderLabel.push(text4.value);
     };
-
     // Save the data to a file when the page is unloaded (refreshed or closed)
+    /**
+     * Saves the data to a file.
+     * Updates the end time and duration of the VCM session in the data object.
+     * Converts the data object to JSON format and saves it as a text file.
+     */
     const saveDataToFile = () => {
       const endTimeVCM = new Date();
       data.value.EndTimeVCM = endTimeVCM;
@@ -392,17 +435,23 @@ export default {
       const blob = new Blob([jsonData], { type: "text/plain;charset=utf-8" });
       saveAs(blob, "data.txt");
     };
-
+    /**
+     * Lifecycle hook executed before the component is destroyed.
+     */
     onBeforeUnmount(() => {
       saveDataToFile();
       clearInterval(timerInterval);
     });
-
     // Register the window.onbeforeunload event to save the data when the page is refreshed or closed
     window.onbeforeunload = () => {
       saveDataToFile();
     };
-
+    /**
+     * Adds data for Slider_2 to the sliders array.
+     * Sets activeSlider to "Slider_2".
+     * Calculates duration based on the start and end time.
+     * Pushes a new object containing slider information to the sliders array.
+     */
     const addData2 = () => {
       activeSlider = "Slider_2";
       const endTime = new Date();
@@ -415,6 +464,12 @@ export default {
         duration: duration,
       });
     };
+    /**
+     * Adds data for Slider_1 to the sliders array.
+     * Sets activeSlider to "Slider_1".
+     * Calculates duration based on the start and end time.
+     * Pushes a new object containing slider information to the sliders array.
+     */
     const addData1 = () => {
       activeSlider = "Slider_1";
       const endTime = new Date();
@@ -427,7 +482,6 @@ export default {
         duration: duration,
       });
     };
-
     let currentSecond = 0;
     // Set up a timer to check and reset activeSlider every second
     const timerInterval = setInterval(() => {
@@ -441,11 +495,9 @@ export default {
         graph.value[currentSecond*500] = null
       }
     }, 500);
-
     // const timerInterval = setInterval(() => {
     //   console.log(activeSlider) // Reset activeSlider to null every second
     // }, 1000);
-
     return {
       title,
       description1,
@@ -482,6 +534,10 @@ export default {
     };
   },
   methods: {
+    /**
+     * Selects all text within the specified reference.
+     * @param {string} refName - The name of the reference.
+     */
     selectAllText(refName) {
       if (this.$refs[refName]) {
         this.$refs[refName].select();

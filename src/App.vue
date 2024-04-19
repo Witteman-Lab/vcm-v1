@@ -23,7 +23,6 @@
           ></v-select>
         </div>
       </v-app-bar>
-
       <v-main>
         <slider-range
           :language="language"
@@ -60,6 +59,11 @@ export default {
   components: {
     SliderRange,
   },
+  /**
+   * Method: data
+   * Description: Returns the initial data for the component.
+   * @returns {object} - An object containing the initial data properties.
+   */
   data() {
     return {
       language: "",
@@ -69,11 +73,20 @@ export default {
     };
   },
   methods: {
+    /**
+     * Method: handleLogoClick
+     * Description: Reloads the current page when the logo is clicked.
+     */
     handleLogoClick() {
       window.location.reload();
     },
   },
   watch: {
+    /**
+     * Method: language
+     * Description: Updates the language setting and URL parameters when the language is changed.
+     * @param {string} newLanguage - The new language code.
+     */
     language(newLanguage) {
       localStorage.setItem("language", newLanguage);
       const urlParams = new URLSearchParams(window.location.search);
@@ -84,6 +97,11 @@ export default {
         `${window.location.pathname}?${urlParams}`
       );
     },
+    /**
+     * Method: returnUrl
+     * Description: Updates the return URL setting and URL parameters with the new return URL.
+     * @param {string} newReturnUrl - The new return URL.
+     */
     returnUrl(newReturnUrl) {
       localStorage.setItem("returnUrl", newReturnUrl);
       const urlParams = new URLSearchParams(window.location.search);
@@ -94,6 +112,11 @@ export default {
         `${window.location.pathname}?${urlParams}`
       );
     },
+    /**
+     * Method: uid
+     * Description: Updates the user ID setting and URL parameters with the new user ID.
+     * @param {string} newUid - The new user ID.
+     */
     uid(newUid) {
       localStorage.setItem("uid", newUid);
       const urlParams = new URLSearchParams(window.location.search);
@@ -105,12 +128,15 @@ export default {
       );
     },
   },
+  /**
+   * Hook: created
+   * Description: Called when the component is created. Retrieves language, returnUrl, and uid from local storage or URL parameters.
+   */
   created() {
     // Retrieve language from local storage on component creation
     const urlParams = new URLSearchParams(window.location.search);
     this.language =
       urlParams.get("lang") || localStorage.getItem("language") || "en";
-
     this.returnUrl =
       urlParams.get("returnUrl") || localStorage.getItem("returnUrl") || "";
     this.uid = urlParams.get("uid") || localStorage.getItem("uid") || "";

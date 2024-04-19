@@ -2,7 +2,6 @@
   <v-container
     class="d-flex flex-column align-center"
     style="width: fit-content"
-
   >
     <v-container
       style="width: 250px; height: 300px"
@@ -64,11 +63,17 @@
     </div>
   </v-container>
 </template>
-  
+
 <script>
 import { ref, watch, getCurrentInstance } from "vue";
 
 export default {
+  /**
+   * Props:
+   * - value1: The first input value (Type: Number, Required: true)
+   * - value2: The second input value (Type: Number, Required: true)
+   * - result: The result string (Type: String, Required: true)
+   */
   props: {
     value1: {
       type: Number,
@@ -95,30 +100,30 @@ export default {
         value1.value = newValue;
       }
     );
-
     watch(
       () => props.value2,
       (newValue) => {
         value2.value = newValue;
       }
     );
-
     // Get the current Vue component instance
     const instance = getCurrentInstance();
-
     // Emit input1 value to the parent component
     const emitInput1 = () => {
       instance.emit("input1", option1.value);
     };
-
     // Emit input2 value to the parent component
     const emitInput2 = () => {
       instance.emit("input2", option2.value);
     };
-
     return { value1, value2, option1, option2, emitInput1, emitInput2 };
   },
   methods: {
+    /**
+     * Method: selectAllText
+     * Description: Selects all text in the referenced element.
+     * @param {string} refName - The name of the ref referencing the element.
+     */
     selectAllText(refName) {
       if (this.$refs[refName]) {
         this.$refs[refName].select();
