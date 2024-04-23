@@ -12,7 +12,7 @@
         <div class="mb-12">
           <v-progress-linear
             v-model="value1"
-            color="#410e73"
+            color="#398064"
             height="80"
             class="progressBar"
           ></v-progress-linear>
@@ -21,7 +21,7 @@
         <div>
           <v-progress-linear
             v-model="value2"
-            color="#a8a873"
+            color="#cd9367"
             height="80"
             class="progressBar"
           >
@@ -52,12 +52,12 @@
       </div>
     </div>
     <div class="d-flex justify-center" v-if="value1 !== 50">
-      <v-chip variant="outlined" :color="value1 > 50 ? '#410e73' : '#a8a873'">
+      <v-chip variant="outlined" :color="value1 > 50 ? '#398064' : '#cd9367'">
         <b>{{ value1 > 50 ? option1 : option2 }}&nbsp;</b>{{ result }}
       </v-chip>
     </div>
     <div class="d-flex justify-center hidden">
-      <v-chip variant="outlined" :color="value1 > 50 ? '#410e73' : '#a8a873'">
+      <v-chip variant="outlined" :color="value1 > 50 ? '#398064' : '#cd9367'">
         <b>{{ value1 > 50 ? option1 : option2 }}&nbsp;</b>{{ result }}
       </v-chip>
     </div>
@@ -141,10 +141,10 @@ export default {
   transform: rotate(-90deg);
 }
 .input1:deep(input) {
-  color: #410e73;
+  color: #398064;
 }
 .input2:deep(input) {
-  color: #a8a873;
+  color: #cd9367;
 }
 </style>
 

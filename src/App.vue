@@ -1,10 +1,10 @@
 <template>
-  <v-container fluid>
+  <v-container id="ourApp" fluid>
     <v-layout>
-      <v-app-bar height="120" app color="white" elevation="12" fixed>
+      <v-app-bar height="60" app color="white" elevation="7" fixed>
         <div class="w-25 ml-5">
           <v-img
-            height="100"
+            height="50"
             src="./assets/logo.svg"
             class="logo-image"
             @click="handleLogoClick"
@@ -24,6 +24,7 @@
         </div>
       </v-app-bar>
       <v-main>
+
         <slider-range
           :language="language"
           :uid="uid"
@@ -34,14 +35,14 @@
     <div class="d-flex justify-center mt-15">
       <v-btn
         class="montserratSemiBoldBtn"
-        color="#05cdc1"
+        color="#398064"
         variant="outlined"
         rounded
         x-large
         v-if="this.returnUrl !== null"
       >
         <span :style="{ display: isMobile ? 'none' : 'inline-block' }"
-          ><a style="color: #05cdc1" :href="this.returnUrl"
+          ><a style="color: #398064" :href="this.returnUrl"
             >Retour au sondage</a
           ></span
         >
@@ -145,13 +146,21 @@ export default {
 </script>
 
 <style scoped lang="scss">
+#ourApp {
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+}
+
 .logo-image {
   cursor: pointer; /* Apply the pointer cursor style */
 }
+
 a,
 a::before,
 a::after {
   text-decoration: none;
-  color: #05cdc1;
+  color: #398064;
 }
 </style>

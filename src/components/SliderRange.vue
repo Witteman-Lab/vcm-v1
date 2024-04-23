@@ -24,7 +24,7 @@
             v-if="width < 675"
             class="d-flex text-body text-justify font-weight-light"
           >
-            <v-btn color="#00d1b2" class="white-text" @click="dialog = true">{{
+            <v-btn color="#398064" class="white-text" @click="dialog = true">{{
               instruction[0]
             }}</v-btn>
             <v-dialog v-model="dialog" width="auto">
@@ -33,7 +33,7 @@
                   {{ description1 }} {{ description2 }} <br />{{ description3 }}
                 </v-card-text>
                 <v-card-actions>
-                  <v-btn color="#00d1b2" block @click="dialog = false">{{
+                  <v-btn color="#398064" block @click="dialog = false">{{
                     instruction[1]
                   }}</v-btn>
                 </v-card-actions>
@@ -41,7 +41,7 @@
             </v-dialog>
           </div>
           <div class="d-flex justify-space-between mb-n9">
-            <div class="font-weight-regular mb-2 w-50">
+            <div class="font-weight-bold mb-2 w-50">
               <v-textarea
                 v-model="text1"
                 variant="plain"
@@ -53,7 +53,7 @@
                 @change="updateText1"
               ></v-textarea>
             </div>
-            <div class="font-weight-regular mb-2 w-50">
+            <div class="font-weight-bold mb-2 w-50">
               <v-textarea
                 v-model="text2"
                 variant="plain"
@@ -72,11 +72,11 @@
               <v-slider
                 v-model="slider1"
                 thumb-label
-                color="#410e73"
+                color="#398064"
                 thumb-color="white"
-                thumb-size="40"
-                track-size="30"
-                track-color="white"
+                thumb-size="30"
+                track-size="15"
+                track-color="#D2D2D2FF"
                 rounded="xl"
                 step="1"
                 @end="updateData1()"
@@ -103,11 +103,11 @@
               <v-slider
                 v-model="slider2"
                 thumb-label
-                color="#a8a873"
+                color="#cd9367"
                 thumb-color="white"
-                thumb-size="40"
-                track-size="30"
-                track-color="white"
+                thumb-size="30"
+                track-size="15"
+                track-color="#D2D2D2FF"
                 rounded="xl"
                 step="1"
                 @end="updateData2()"
@@ -548,12 +548,12 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.colored-box1 {
-  background-color: #e6e5ff;
-}
-.colored-box2 {
-  background-color: #f1f4b6;
-}
+//.colored-box1 {
+//  background-color: #d2d2d2;
+//}
+//.colored-box2 {
+//  background-color: #EBEBEBFF;
+//}
 .right-input:deep(textarea) {
   text-align: right;
 }
@@ -561,7 +561,7 @@ export default {
   text-align: center;
 }
 .title {
-  color: #00d1b2;
+  color: black;
 }
 .white-text:deep() {
   color: white;
