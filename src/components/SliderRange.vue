@@ -5,41 +5,50 @@
     style="width: fit-content"
     class="mx-auto"
   >
+    <div class="header">
+      <div class="text-h4 font-weight-bold title">
+  <!--          Title-->
+        {{title}}
+      </div>
+      <div
+        v-if="width > 675"
+        class="text-body text-justify"
+      >
+  <!--      Subtitle for desktop-->
+        {{ description1 }} {{ description2 }} <br />{{ description3 }}
+      </div>
+
+      <div
+        v-if="width < 675"
+        class="text-body text-justify tgl-btn"
+      >
+  <!--      Subtitle toggle for mobile-->
+        <v-btn
+          color="#398064"
+          class="white-text"
+          @click="dialog = true">
+          {{instruction[0] }}
+        </v-btn>
+        <v-dialog v-model="dialog" width="auto">
+          <v-card>
+            <v-card-text>
+              {{ description1 }} {{ description2 }} <br />{{ description3 }}
+            </v-card-text>
+            <v-card-actions>
+              <v-btn color="#398064" block @click="dialog = false">{{
+                  instruction[1]
+                }}</v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
+      </div>
+    </div>
     <v-row no-gutters>
-      <v-col order-sm="first">
+      <v-col id="sliders-wrp" order-sm="first">
         <div
           class="d-flex flex-column"
           :style="width < 500 ? 'width: max-content' : ''"
         >
-          <div class="d-flex text-h5 font-weight-bold title">
-            {{ title }}
-          </div>
-          <div
-            v-if="width > 675"
-            class="d-flex text-body text-justify font-weight-light"
-          >
-            {{ description1 }} {{ description2 }} <br />{{ description3 }}
-          </div>
-          <div
-            v-if="width < 675"
-            class="d-flex text-body text-justify font-weight-light"
-          >
-            <v-btn color="#398064" class="white-text" @click="dialog = true">{{
-              instruction[0]
-            }}</v-btn>
-            <v-dialog v-model="dialog" width="auto">
-              <v-card>
-                <v-card-text>
-                  {{ description1 }} {{ description2 }} <br />{{ description3 }}
-                </v-card-text>
-                <v-card-actions>
-                  <v-btn color="#398064" block @click="dialog = false">{{
-                    instruction[1]
-                  }}</v-btn>
-                </v-card-actions>
-              </v-card>
-            </v-dialog>
-          </div>
           <div class="d-flex justify-space-between mb-n9">
             <div class="font-weight-bold mb-2 w-50">
               <v-textarea
@@ -67,7 +76,7 @@
               ></v-textarea>
             </div>
           </div>
-          <div class="colored-box1 mb-2" style="z-index: 10">
+          <div class="mb-2" style="z-index: 10">
             <div class="d-flex flex-column pa-4">
               <v-slider
                 v-model="slider1"
@@ -98,7 +107,7 @@
               </div>
             </div>
           </div>
-          <div class="colored-box2">
+          <div>
             <div class="d-flex flex-column pa-4">
               <v-slider
                 v-model="slider2"
@@ -548,12 +557,11 @@ export default {
 </script>
 
 <style scoped lang="scss">
-//.colored-box1 {
-//  background-color: #d2d2d2;
-//}
-//.colored-box2 {
-//  background-color: #EBEBEBFF;
-//}
+.header{
+  margin-bottom: 15px;
+  margin-top: -30px;
+  font-weight: normal
+}
 .right-input:deep(textarea) {
   text-align: right;
 }
@@ -561,9 +569,16 @@ export default {
   text-align: center;
 }
 .title {
-  color: black;
+  margin: 20px;
 }
 .white-text:deep() {
   color: white;
+}
+.tgl-btn{
+  display: flex;
+  justify-content: center;
+}
+#sliders-wrp{
+  align-content: center;
 }
 </style>

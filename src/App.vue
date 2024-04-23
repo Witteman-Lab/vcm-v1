@@ -23,8 +23,7 @@
           ></v-select>
         </div>
       </v-app-bar>
-      <v-main>
-
+      <v-main id="main">
         <slider-range
           :language="language"
           :uid="uid"
@@ -151,6 +150,13 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  color: #2c3d50;
+}
+
+@media only screen and (max-width: 675px) {
+  #main {
+    margin-top: 100px;
+  }
 }
 
 .logo-image {
