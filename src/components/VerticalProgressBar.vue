@@ -29,7 +29,7 @@
         </div>
       </div>
     </v-container>
-    <div style="width: 288px" class="d-flex justify-space-between mb-6 px-6">
+    <div style="width: 100%;" class="d-flex justify-space-between mb-6 px-6">
       <div class="font-weight-regular w-25 my-n6">
         <v-text-field
           class="input1"

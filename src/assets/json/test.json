@@ -1,0 +1,316 @@
+{
+  "userID" : "123423",
+  "language" : "en",
+  "StartTimeTestVCM" : "2023-08-15T13:36:16.716Z",
+  "EndTimeVCM" : "2023-08-15T13:37:16.716Z",
+  "duration_m_s" : "2m 2s",
+  "leftScaleLabel" : "",
+  "rightScaleLabel" : "",
+  "topSliderLabel" : "",
+  "bottomSliderLabel" : "",
+  "option1" : "",
+  "option2" : "",
+  "sliders" : [
+    {
+      "Time (ms)" : 0,
+      "Slider_1 (Number)" : null,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 500,
+      "Slider_1 (Number)" : null,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 1000,
+      "Slider_1 (Number)" : 50,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 1500,
+      "Slider_1 (Number)" : 51,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 2000,
+      "Slider_1 (Number)" : 52,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 2500,
+      "Slider_1 (Number)" : 53,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 3000,
+      "Slider_1 (Number)" : 54,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 3500,
+      "Slider_1 (Number)" : 55,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 4000,
+      "Slider_1 (Number)" : 56,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 4500,
+      "Slider_1 (Number)" : 57,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 5000,
+      "Slider_1 (Number)" : 58,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 5500,
+      "Slider_1 (Number)" : 59,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 6000,
+      "Slider_1 (Number)" : 60,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 6500,
+      "Slider_1 (Number)" : 61,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 7000,
+      "Slider_1 (Number)" : 62,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 7500,
+      "Slider_1 (Number)" : null,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 8000,
+      "Slider_1 (Number)" : null,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 8500,
+      "Slider_1 (Number)" : null,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 9000,
+      "Slider_1 (Number)" : null,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 9500,
+      "Slider_1 (Number)" : null,
+      "Slider_2 (Number)": 24
+    },
+    {
+      "Time (ms)" : 10000,
+      "Slider_1 (Number)" : null,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 10500,
+      "Slider_1 (Number)" : null,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 11000,
+      "Slider_1 (Number)" : null,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 11500,
+      "Slider_1 (Number)" : null,
+      "Slider_2 (Number)": 53
+    },
+    {
+      "Time (ms)" : 12000,
+      "Slider_1 (Number)" : null,
+      "Slider_2 (Number)": 53
+    },
+    {
+      "Time (ms)" : 12500,
+      "Slider_1 (Number)" : null,
+      "Slider_2 (Number)": 53
+    },
+    {
+      "Time (ms)" : 13000,
+      "Slider_1 (Number)" : null,
+      "Slider_2 (Number)": 53
+    },
+    {
+      "Time (ms)" : 13500,
+      "Slider_1 (Number)" : null,
+      "Slider_2 (Number)": 54
+    },
+    {
+      "Time (ms)" : 14000,
+      "Slider_1 (Number)" : null,
+      "Slider_2 (Number)": 55
+    },
+    {
+      "Time (ms)" : 14500,
+      "Slider_1 (Number)" : null,
+      "Slider_2 (Number)": 56
+    },
+    {
+      "Time (ms)" : 15000,
+      "Slider_1 (Number)" : null,
+      "Slider_2 (Number)": 56
+    },
+    {
+      "Time (ms)" : 15500,
+      "Slider_1 (Number)" : null,
+      "Slider_2 (Number)": 56
+    },
+    {
+      "Time (ms)" : 16000,
+      "Slider_1 (Number)" : null,
+      "Slider_2 (Number)": 58
+    },
+    {
+      "Time (ms)" : 16500,
+      "Slider_1 (Number)" : null,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 17000,
+      "Slider_1 (Number)" : null,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 17500,
+      "Slider_1 (Number)" : null,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 18000,
+      "Slider_1 (Number)" : 42,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 18500,
+      "Slider_1 (Number)" : 43,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 19000,
+      "Slider_1 (Number)" : 44,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 19500,
+      "Slider_1 (Number)" : 45,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 20000,
+      "Slider_1 (Number)" : 46,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 20500,
+      "Slider_1 (Number)" : 47,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 21500,
+      "Slider_1 (Number)" : null,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 22000,
+      "Slider_1 (Number)" : null,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 22500,
+      "Slider_1 (Number)" : null,
+      "Slider_2 (Number)": 0
+    },
+    {
+      "Time (ms)" : 23000,
+      "Slider_1 (Number)" : null,
+      "Slider_2 (Number)": 0
+    },
+    {
+      "Time (ms)" : 23500,
+      "Slider_1 (Number)" : null,
+      "Slider_2 (Number)": 0
+    },
+    {
+      "Time (ms)" : 24000,
+      "Slider_1 (Number)" : null,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 24500,
+      "Slider_1 (Number)" : null,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 25000,
+      "Slider_1 (Number)" : 100,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 25500,
+      "Slider_1 (Number)" : 99,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 26000,
+      "Slider_1 (Number)" : 98,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 26500,
+      "Slider_1 (Number)" : 97,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 27000,
+      "Slider_1 (Number)" : 96,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 27500,
+      "Slider_1 (Number)" : 95,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 28000,
+      "Slider_1 (Number)" : 94,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 28500,
+      "Slider_1 (Number)" : 93,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 29000,
+      "Slider_1 (Number)" : 92,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 29500,
+      "Slider_1 (Number)" : 91,
+      "Slider_2 (Number)": null
+    },
+    {
+      "Time (ms)" : 30000,
+      "Slider_1 (Number)" : 90,
+      "Slider_2 (Number)": null
+    }
+  ]
+}
+

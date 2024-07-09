@@ -15,7 +15,7 @@
         class="text-body text-justify"
       >
   <!--      Subtitle for desktop-->
-        {{ description1 }} {{ description2 }} <br />{{ description3 }}
+        {{ description1 }} {{ description2 }}
       </div>
 
       <div
@@ -32,7 +32,7 @@
         <v-dialog v-model="dialog" width="auto">
           <v-card>
             <v-card-text>
-              {{ description1 }} {{ description2 }} <br />{{ description3 }}
+              {{ description1 }} {{ description2 }}
             </v-card-text>
             <v-card-actions>
               <v-btn color="#398064" block @click="dialog = false">{{
@@ -76,11 +76,10 @@
               ></v-textarea>
             </div>
           </div>
-          <div class="mb-2" style="z-index: 10">
+          <div class="mb-2" style="z-index: 10;">
             <div class="d-flex flex-column pa-4">
               <v-slider
                 v-model="slider1"
-                thumb-label
                 color="#398064"
                 thumb-color="white"
                 thumb-size="30"
@@ -111,7 +110,6 @@
             <div class="d-flex flex-column pa-4">
               <v-slider
                 v-model="slider2"
-                thumb-label
                 color="#cd9367"
                 thumb-color="white"
                 thumb-size="30"
@@ -203,10 +201,10 @@ export default {
         title.value = textData.value.title;
         description1.value = textData.value.description1;
         description2.value = textData.value.description2;
-        description3.value = textData.value.description3;
         leftScaleLabel.value = textData.value.leftScaleLabel;
         rightScaleLabel.value = textData.value.rightScaleLabel;
         topSliderLabel.value = textData.value.topSliderLabel;
+        bottomSliderLabel.value = textData.value.topSliderLabel;
         result.value = textData.value.result;
         instruction.value = textData.value.instruction;
         data.value.language = props.language;
@@ -217,7 +215,6 @@ export default {
     const title = ref(textData.value.title);
     const description1 = ref(textData.value.description1);
     const description2 = ref(textData.value.description2);
-    const description3 = ref(textData.value.description3);
     const leftScaleLabel = ref(textData.value.leftScaleLabel);
     const rightScaleLabel = ref(textData.value.rightScaleLabel);
     const topSliderLabel = ref(textData.value.topSliderLabel);
@@ -232,7 +229,7 @@ export default {
     const text1 = ref(leftScaleLabel);
     const text2 = ref(rightScaleLabel);
     const text3 = ref(topSliderLabel);
-    const text4 = ref(bottomSliderLabel);
+    const text4 = ref(bottomSliderLabel); // Magniol
     const choice1 = ref(slider1.value);
     const choice2 = ref(slider2.value);
     const { width, height } = useWindowSize();
@@ -511,7 +508,6 @@ export default {
       title,
       description1,
       description2,
-      description3,
       leftScaleLabel,
       rightScaleLabel,
       topSliderLabel,

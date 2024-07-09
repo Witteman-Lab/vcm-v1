@@ -32,7 +32,7 @@
       </v-main>
     </v-layout>
     <div class="d-flex justify-center mt-15">
-      <v-btn
+      <v-btn style="display: none"
         class="montserratSemiBoldBtn"
         color="#398064"
         variant="outlined"
